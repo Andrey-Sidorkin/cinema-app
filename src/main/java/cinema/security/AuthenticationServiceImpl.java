@@ -42,7 +42,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
             shoppingCartService.registerNewShoppingCart(user);
             return user;
         }
-        throw new RegistrationException("Can't register user with e-mail " + email);
+        throw new RegistrationException("Can't register user with email " + email);
     }
 
     private boolean matchPasswords(String rawPassword, User userFromDb) {
