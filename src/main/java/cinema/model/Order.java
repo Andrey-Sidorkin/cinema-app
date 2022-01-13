@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,23 +23,10 @@ public class Order {
     @JoinTable(joinColumns = @JoinColumn(name = "order_id"),
             inverseJoinColumns = @JoinColumn(name = "ticket_id"))
     private List<Ticket> tickets;
-    @Column(name = "order_date")
-    private LocalDateTime orderDate;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @Column(name = "order_time")
+    private LocalDateTime orderTime;
+    @ManyToOne
     private User user;
-
-    public Order() {
-    }
-
-    public Order(List<Ticket> tickets, User user) {
-        this.tickets = tickets;
-        this.user = user;
-    }
-
-    public Order(List<Ticket> tickets, User user, LocalDateTime orderDate) {
-        this(tickets, user);
-        this.orderDate = orderDate;
-    }
 
     public Long getId() {
         return id;
@@ -58,12 +44,12 @@ public class Order {
         this.tickets = tickets;
     }
 
-    public LocalDateTime getOrderDate() {
-        return orderDate;
+    public LocalDateTime getOrderTime() {
+        return orderTime;
     }
 
-    public void setOrderDate(LocalDateTime orderDate) {
-        this.orderDate = orderDate;
+    public void setOrderTime(LocalDateTime orderTime) {
+        this.orderTime = orderTime;
     }
 
     public User getUser() {
@@ -79,8 +65,7 @@ public class Order {
         return "Order{"
                 + "id=" + id
                 + ", tickets=" + tickets
-                + ", orderDate=" + orderDate
-                + ", user=" + user
-                + '}';
+                + ", orderTime=" + orderTime
+                + ", user=" + user + '}';
     }
 }
