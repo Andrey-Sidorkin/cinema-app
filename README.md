@@ -73,5 +73,8 @@ db.user=YOUR_USERNAME
 db.password=YOUR_PASSWORD
 ```
 
+Use this url: ```http://localhost:8080/inject``` to inject mock data.<br>
+Before that you can edit emails and passwords in file ```cinema/controller/InjectController``` to your own taste.
+
 #### Then please take your seat and enjoy the screening!
 ![](images/my-strip-bottom.svg)   
