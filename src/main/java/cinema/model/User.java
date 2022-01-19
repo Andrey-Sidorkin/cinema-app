@@ -22,8 +22,8 @@ public class User {
     private String password;
     @ManyToMany
     @JoinTable(name = "users_roles",
-            joinColumns = @JoinColumn(name = "users"),
-            inverseJoinColumns = @JoinColumn(name = "roles"))
+            joinColumns = @JoinColumn(name = "user"),
+            inverseJoinColumns = @JoinColumn(name = "role"))
     private Set<Role> roles;
 
     public Long getId() {

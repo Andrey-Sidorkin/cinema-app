@@ -14,7 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @PropertySource("classpath:db.properties")
-@ComponentScan(basePackages = {"cinema.model"})
+@ComponentScan(basePackages = {"cinema"})
 public class AppConfig {
     private final Environment environment;
 
