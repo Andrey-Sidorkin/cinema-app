@@ -14,7 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @PropertySource("classpath:db.properties")
-@ComponentScan(basePackages = {"cinema"})
+@ComponentScan(basePackages = {"cinema.model"})
 public class AppConfig {
     private final Environment environment;
 
@@ -43,7 +43,7 @@ public class AppConfig {
         properties.put("hibernate.hbm2ddl.auto", environment.getProperty("hibernate.hbm2ddl.auto"));
 
         factoryBean.setHibernateProperties(properties);
-        factoryBean.setPackagesToScan("cinema");
+        factoryBean.setPackagesToScan("cinema.model");
         return factoryBean;
     }
 
